@@ -1,6 +1,30 @@
 # front-end-review
 前端拾遗 突然有一天发现 woc 不会写css和html 就找了份Guide 撸一下
 [MDN web doc](https://developer.mozilla.org/zh-CN/)
+
+# CSS
+
+### CSS是如何实现的    
+
+当浏览器显示文档的时候
+他必须将文档的内容和他的样式结合在一起     
+
+    1. 浏览器将html和css转换成DOM对象DOM在计算机中表示文档    
+    2. 浏览器显示DOM   
+
+
+### CSS的新名词
+
+* 属性(property):可以理解的标识符 例子:字体，宽度，背景颜色
+* 属性值(value):表示你要把属性修改成什么样子
+
+### CSS声明
+![Alt text](https://mdn.mozillademos.org/files/3665/css%20syntax%20-%20declaration.png)
+1. 如果你写错了属性值，声明将会无效，引擎会忽略掉他。
+2. 使用美式拼写，不能打错别字
+
+### CSS语句
+
 ```css
 @import 'custom.css';
 ```
@@ -79,6 +103,7 @@ NOTE:本例中的 data-* 属性被称为 数据属性。它们提供了一种在
 * [data-vegetable*="not spicy"] :用来处理属性值中包含`not spicy`的元素 。
 * [data-quantity$="kg"] :用来处理`kg`结尾的元素。
 * [data-quantity^="optional"] :用来处理`optional`开头的元素
+
 
 
 # JS
