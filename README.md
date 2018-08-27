@@ -1,27 +1,5 @@
 # front-end-review
 前端复习
-# CSS
-### CSS是如何实现的    
-
-当浏览器显示文档的时候
-他必须将文档的内容和他的样式结合在一起     
-
-    1. 浏览器将html和css转换成DOM对象DOM在计算机中表示文档    
-    2. 浏览器显示DOM   
-
-
-### CSS的新名词
-
-* 属性(property):可以理解的标识符 例子:字体，宽度，背景颜色
-* 属性值(value):表示你要把属性修改成什么样子
-
-### CSS声明
-![Alt text](https://mdn.mozillademos.org/files/3665/css%20syntax%20-%20declaration.png)
-1. 如果你写错了属性值，声明将会无效，引擎会忽略掉他。
-2. 使用美式拼写，不能打错别字
-
-### CSS语句
-
 ```css
 @import 'custom.css';
 ```
@@ -63,6 +41,43 @@
     background: rgba(255, 0, 0, 0.25)
 }
 ```
+
+### 存在和值属性选择器  
+* [attr]: 改选择器包含attr的所有属性。  
+* [attr=val]：该选择器仅选择 attr 属性被赋值为 val 的所有元素。
+* [attr~=val]：元素的属性中还包含其他属性值，都会被应用红色的文本颜色
+
+```html
+    <ul>
+      <li data-quantiy="1kg" data-vegetable>Tomatoes</li>
+      <li data-quantiy="3" data-vegetable>Onions</li>
+      <li data-quantity="25cl" data-vegetable="liquid">White wine</li>
+      <li data-quantity="3" data-vegetable="spicy ">ite </li>
+    </ul>
+```
+
+```css
+[data-vegetable]{
+    color: green;
+}
+
+[data-vegetable="liquid"] {
+    background-color: goldenrod;
+  }
+  
+  /* 所有具有"data-vegetable"属性且属性值包含"spicy"的元素，
+  即使元素的属性中还包含其他属性值，都会被应用红色的文本颜色 */
+  [data-vegetable~="spicy"] {
+    color: red;
+  } 
+```  
+NOTE:本例中的 data-* 属性被称为 数据属性。它们提供了一种在HTML属性中存储自定义数据的方法
+
+### 伪正则选择器
+* [lang|="fr"] :用来选择attr的属性的值是`fr`或者`fr`开头的 用于语言编码处理。
+* [data-vegetable*="not spicy"] :用来处理属性值中包含`not spicy`的元素 。
+* [data-quantity$="kg"] :用来处理`kg`结尾的元素。
+* [data-quantity^="optional"] :用来处理`optional`开头的元素
 
 
 # JS
