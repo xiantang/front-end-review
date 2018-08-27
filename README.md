@@ -1,6 +1,6 @@
 # front-end-review
 前端复习
-##CSS
+## CSS
 ### CSS是如何实现的    
 
 当浏览器显示文档的时候
