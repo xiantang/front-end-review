@@ -1,5 +1,6 @@
 # front-end-review
-前端复习
+前端拾遗 突然有一天发现 woc 不会写css和html 就找了份Guide 撸一下
+[MDN web doc](https://developer.mozilla.org/zh-CN/)
 ```css
 @import 'custom.css';
 ```
