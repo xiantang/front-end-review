@@ -105,6 +105,89 @@ NOTE:本例中的 data-* 属性被称为 数据属性。它们提供了一种在
 * [data-quantity^="optional"] :用来处理`optional`开头的元素
 
 
+### 伪类
+以`:`作为前缀，被添加到选择器末尾的关键字，当你的元素在特定状态下才本指定的元素。
+
+```html
+<a href="https://developer.mozilla.org/" target="_blank">Mozilla Developer Network</a>
+```
+
+```css
+/* 这些样式将在任何情况下应用于我们
+的链接 */
+
+a {
+  color: blue;
+  font-weight: bold;
+}
+
+/* 我们想让被访问过的链接和未被访问
+的链接看起来一样 */
+
+a:visited {
+  color: blue;
+}
+
+/* 当光标悬停于链接，键盘激活或锁定
+链接时，我们让链接呈现高亮 */
+
+a:hover,
+a:active,
+a:focus {
+  color: darkred;
+  text-decoration: none;
+}
+```
+
+### 伪元素
+
+使用的是两个冒号`(::)`,添加到选择器后面去选择某个元素的某个部分
+
+domo:
+
+```html
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/CSS">CSS</a> defined in the MDN glossary.</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML">HTML</a> defined in the MDN glossary.</li>
+</ul>
+```
+
+```css
+[href^=http]::after {
+  content: '⤴';
+}
+```
+
+### 组合器和选择器组
+
+| Combinators | 	Select 
+| ------ | ------ | ------ |
+| A,B | 匹配满足A（和/或）B的任意元素 
+| A B | 匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点）
+|A > B| 匹配任意元素，满足条件：B是A的直接子节点
+|A + B| 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）
+|A ~ B| 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）
+
+NOTE:
+`+`的意思是当你选择在`+`之前的元素的兄弟元素
+
+```css
+h1+p {
+  font-style: bold;
+  color: blue;
+}
+```
+
+
+```html
+<h1>Welcome to my website</h1>
+
+<p>Hello, and welcome! I hope you enjoy your time here.</p>
+```
+
+
+
+
 
 # JS
 
