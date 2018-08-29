@@ -2,8 +2,6 @@
 前端拾遗 突然有一天发现 woc 不会写css和html 就找了份Guide 撸一下
 [MDN web doc](https://developer.mozilla.org/zh-CN/)
 
-# CSS
-
 ### CSS是如何实现的    
 
 当浏览器显示文档的时候
@@ -160,17 +158,13 @@ domo:
 
 ### 组合器和选择器组
 
-
-
 | Combinators | 	Select 
-| ------ | ------ 
+| ------ | ------ | ------ |
 | A,B | 匹配满足A（和/或）B的任意元素 
 | A B | 匹配任意元素，满足条件：B是A的后代结点（B是A的子节点，或者A的子节点的子节点）
 |A > B| 匹配任意元素，满足条件：B是A的直接子节点
 |A + B| 匹配任意元素，满足条件：B是A的下一个兄弟节点（AB有相同的父结点，并且B紧跟在A的后面）
 |A ~ B| 匹配任意元素，满足条件：B是A之后的兄弟节点中的任意一个（AB有相同的父节点，B在A之后，但不一定是紧挨着A）
-
-
 
 NOTE:
 `+`的意思是当你选择在`+`之前的元素的兄弟元素
@@ -189,8 +183,41 @@ h1+p {
 <p>Hello, and welcome! I hope you enjoy your time here.</p>
 ```
 
+### 浮动
+* left- 将元素浮动到左侧
+* right- 将元素浮动到右侧
+* none- 默认值 不浮动
+* inherit-继承父元素的浮动属性
 
+```html
+<div>
+  <h2>First column</h2>
+  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla luctus aliquam dolor, eu lacinia lorem placerat vulputate. </p>
+</div>
 
+<div>
+  <h2>Second column</h2>
+  <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut.</p>
+</div>
+```
+
+```css
+div:nth-of-type(1){
+    width: 48%;
+    float: left;
+}
+div:nth-of-type(2){
+    width: 48%;
+    float: right;
+}
+```
+
+#### 定位技术
+
+* 静态定位(Static positioning)是每个元素默认的属性——它表示“将元素放在文档布局流的默认位置——没有什么特殊的地方”。
+* 相对定位(Relative positioning)允许我们相对元素在正常的文档流中的位置移动它——包括将两个元素叠放在页面上。这对于微调和精准设计(design pinpointing)非常有用。
+* 绝对定位(Absolute positioning)将元素完全从页面的正常布局流中移出，类似将它单独放在一个图层中. 我们可以将元素相对于页面的 <html> 元素边缘固定，或者相对于离元素最近的被定位的祖先元素(ancestor element)。绝对定位在创建复杂布局效果时非常有用，例如通过标签显示和隐藏的内容面板或者通过按钮控制滑动到屏幕中的信息面板.
+* 固定定位(Fixed positioning)与绝对定位非常类似，除了它是将一个元素相对浏览器视口固定，而不是相对另外一个元素。 在创建类似页面滚动总是处于页面上方的导航菜单时非常有用。
 
 
 # JS
