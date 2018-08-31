@@ -212,12 +212,23 @@ div:nth-of-type(2){
 }
 ```
 
+    
 #### 定位技术
 
 * 静态定位(Static positioning)是每个元素默认的属性——它表示“将元素放在文档布局流的默认位置——没有什么特殊的地方”。
 * 相对定位(Relative positioning)允许我们相对元素在正常的文档流中的位置移动它——包括将两个元素叠放在页面上。这对于微调和精准设计(design pinpointing)非常有用。
 * 绝对定位(Absolute positioning)将元素完全从页面的正常布局流中移出，类似将它单独放在一个图层中. 我们可以将元素相对于页面的 <html> 元素边缘固定，或者相对于离元素最近的被定位的祖先元素(ancestor element)。绝对定位在创建复杂布局效果时非常有用，例如通过标签显示和隐藏的内容面板或者通过按钮控制滑动到屏幕中的信息面板.
 * 固定定位(Fixed positioning)与绝对定位非常类似，除了它是将一个元素相对浏览器视口固定，而不是相对另外一个元素。 在创建类似页面滚动总是处于页面上方的导航菜单时非常有用。
+
+
+#### relative
+相对定位指的是在文档流当中，然后`top`和`left`是根据原来在文档流当中的位置来决定的
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/Learn/CSS/CSS_layout/Introduction$samples/Relative_positioning_example?revision=1380732" class="live-sample-frame sample-code-frame" height="300" width="100%" id="frame_Relative_positioning_example" frameborder="0"></iframe>
+
+#### absolute 
+绝对定位是脱离出文档流，然后以整页面为参照系
+
+<iframe src="https://mdn.mozillademos.org/zh-CN/docs/Learn/CSS/CSS_layout/Introduction$samples/Absolute_positioning_example?revision=1380732" class="live-sample-frame sample-code-frame" height="300" width="100%" id="frame_Absolute_positioning_example" frameborder="0"></iframe>
 
 ### position
 # JS
