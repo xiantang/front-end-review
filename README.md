@@ -231,6 +231,48 @@ div:nth-of-type(2){
 <iframe src="https://mdn.mozillademos.org/zh-CN/docs/Learn/CSS/CSS_layout/Introduction$samples/Absolute_positioning_example?revision=1380732" class="live-sample-frame sample-code-frame" height="300" width="100%" id="frame_Absolute_positioning_example" frameborder="0"></iframe>
 
 ### position
+
+
+### 弹性盒子
+
+`display:flex` 告诉`<select>`元素的子元素作为`flexble boxes`默认情况下,他们将展开来用来填充父类的可用高度    
+`flex:1`告诉每个`div`,在行中获取相同数量的空间不管有多少.
+
+#### flex 模型说明
+![](https://developer.mozilla.org/files/3739/flex_terms.png)
+
+
+* 主轴（main axis）是沿着 flex 元素放置的方向延伸的轴（比如页面上的横向的行、纵向的列）。该轴的开始和结束被称为 main start 和 main end。
+
+* 交叉轴（cross axis）是垂直于 flex 元素放置方向的轴。该轴的开始和结束被称为 cross start 和 cross end。
+
+* 设置了 `display: flex` 的父元素（在本例中是 `<section>`）被称之为 flex 容器（flex container）。 
+
+* 在 flex 容器中表现为柔性的盒子的元素被称之为 flex 项（flex item）（本例中是 `<article>` 元素。
+
+
+`flex-direction: row;`指定填充满宽度
+
+
+`flex-wrap: wrap` 防止儿子比父亲宽
+
+`flex-flow: row wrap;` 上面两句的缩写
+
+`flex:1`指的是设置区块间的相对比例
+
+
+```css
+article{
+          flex: 1;
+      }
+article:nth-of-type(3) {
+        flex: 2;
+      }
+```
+
+#### 水平垂直对齐
+
+
 # JS
 
 ```javascript
