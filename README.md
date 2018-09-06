@@ -358,7 +358,7 @@ myButton.onclick = function() {
   ```
   这个东西感觉和后端的session一样 也是存储东西用的 
   但是也不一样 这个骚东西是可以在浏览器关闭后继续存在的
-  woc 真的骚
+
 
 
   
